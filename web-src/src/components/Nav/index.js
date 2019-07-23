@@ -10,14 +10,16 @@ OF ANY KIND, either express or implied. See the License for the specific languag
 governing permissions and limitations under the License.
 */
 import React from 'react'
-// import Action from '../services/Action'
-// import logo from '../../resources/adobe-logo.png'
+import './Nav.css'
 
-export const Home = (props) => {
-  console.log('in Home')
+export const Nav = (props) => {
+  const { navigateTo } = props; 
+  console.log('in Nav');
   return (
-    <div style={{ textAlign: 'center' }}>
-      Home
+    <div className='nav-topbar'>
+      <div className='nav-title nav-item' onClick={() => navigateTo(0)}>Kegbot I/O</div>
+      <div className='nav-item' onClick={() => navigateTo(0)}>Home</div>
+      <div className='nav-item' onClick={() => navigateTo(1)}>Vote</div>
     </div>);
 }
-export default Home;
+export default Nav;

@@ -1,0 +1,12 @@
+.nav-topbar {
+  text-align: center;
+  display: flex;
+}
+
+.nav-item {
+  margin: 20px;
+}
+
+.nav-title {
+  margin-right: 20px;
+}

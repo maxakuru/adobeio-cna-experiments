@@ -9,30 +9,43 @@ the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTA
 OF ANY KIND, either express or implied. See the License for the specific language
 governing permissions and limitations under the License.
 */
-import React from 'react'
+import React, { useState } from 'react'
 import ErrorBoundary from 'react-error-boundary'
 import { Home, Vote } from './pages'
+import { Nav } from './components';
 
-export default class App extends React.Component {
-  constructor () {
-    super()
+export const App = () => {
+  const onError = (e, componentStack) => { }
+  // component to show if UI fails rendering
+  const fallbackComponent = ({ componentStack, error }) => (
+    <h1 style={{ textAlign: 'center', marginTop: '0' }}>Something went wrong :(</h1>
+  )
 
-    // error handler on UI rendering failure
-    this.onError = (e, componentStack) => {}
+  const [state, setState] = useState({
+    routeIndex: 0 // 0 = HOME, 1 = VOTE
+  })
 
-    // component to show if UI fails rendering
-    this.fallbackComponent = ({ componentStack, error }) => (
-      <h1 style={{ textAlign: 'center', marginTop: '0' }}>Something went wrong :(</h1>
-    )
+  const changeRoute = (newRouteIndex) => {
+    setState({
+      routeIndex: newRouteIndex
+    })
   }
 
-  render () {
-    return (
-      <div style={{ height: '100vh' }}>
-        <ErrorBoundary onError={this.onError} FallbackComponent={this.fallbackComponent} >
-          <Home />
-        </ErrorBoundary>
-      </div>
-    )
-  }
+  return (
+    <div style={{ height: '100vh' }}>
+      <ErrorBoundary onError={onError} FallbackComponent={fallbackComponent} >
+        <Nav navigateTo={changeRoute} />
+        {
+          state.routeIndex === 0 &&
+          <Home/>
+        }
+        {
+          state.routeIndex === 1 &&
+          <Vote/>
+        }
+      </ErrorBoundary>
+    </div>
+  )
 }
+
+export default App;

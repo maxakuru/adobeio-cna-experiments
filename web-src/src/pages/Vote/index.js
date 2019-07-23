@@ -14,6 +14,7 @@ import React from 'react'
 // import logo from '../../resources/adobe-logo.png'
 
 export const Vote = (props) => {
+  console.log('in Vote');
   return (
     <div style={{ textAlign: 'center' }}>
       Vote
