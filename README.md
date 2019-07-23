@@ -1,14 +1,6 @@
+# CNA Experiments
 
-[![Build Status](https://travis-ci.com/adobe/adobeio-cna-starter-project.svg?branch=master)](https://travis-ci.com/adobe/adobeio-cna-starter-project)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-<!-- [![Version](https://img.shields.io/npm/v/@adobe/adobeio-cna-starter-project.svg)](https://npmjs.org/package/@adobe/adobeio-cna-starter-project) -->
-
-
-
-# Runtime CNA Starter
-
-A starter project for building a cloud native app (CNA) on top of Adobe I/O Runtime.
+Based on the [Adobe IO CNA starter](https://github.com/adobe/adobeio-cna-starter-project)
 
 ## Setup
 

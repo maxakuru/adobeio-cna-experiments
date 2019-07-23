@@ -11,7 +11,7 @@ governing permissions and limitations under the License.
 */
 import React from 'react'
 import ErrorBoundary from 'react-error-boundary'
-import HelloPage from './pages/Hello'
+import { Home, Vote } from './pages'
 
 export default class App extends React.Component {
   constructor () {
@@ -30,7 +30,7 @@ export default class App extends React.Component {
     return (
       <div style={{ height: '100vh' }}>
         <ErrorBoundary onError={this.onError} FallbackComponent={this.fallbackComponent} >
-          <HelloPage />
+          <Home />
         </ErrorBoundary>
       </div>
     )
